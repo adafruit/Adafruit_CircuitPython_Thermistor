@@ -10,7 +10,9 @@ Introduction
     :target: https://gitter.im/adafruit/circuitpython?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
     :alt: Gitter
 
-TODO
+Thermistors are resistors that predictably change resistance with temperature.
+This driver uses an analog reading and math to determine the temperature. They
+are commonly used as a low cost way to measure temperature.
 
 Dependencies
 =============
