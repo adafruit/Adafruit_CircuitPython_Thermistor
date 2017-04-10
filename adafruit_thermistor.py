@@ -47,13 +47,13 @@ Implementation Notes
 """
 
 import math
-import nativeio
+import analogio
 
 class Thermistor:
     """Thermistor driver"""
 
     def __init__(self, pin, series_resistor, nominal_resistance, nominal_temperature, b_coefficient):
-        self.pin = nativeio.AnalogIn(pin)
+        self.pin = analogio.AnalogIn(pin)
         self.series_resistor = series_resistor
         self.nominal_resistance = nominal_resistance
         self.nominal_temperature = nominal_temperature
