@@ -26,7 +26,11 @@
 A thermistor is a resistor that varies with temperature. This driver takes the
 parameters of that resistor and its series resistor to determine the current
 temperature. To hook one up, connect an analog input pin to the connection
-between the resistor and the thermistor.
+between the resistor and the thermistor.  Be careful to note if the thermistor
+is connected on the high side (from analog input up to high logic level/3.3 or
+5 volts) or low side (from analog input down to ground).  The initializer takes
+an optional high_side boolean that defaults to True and indicates if that the
+thermistor is connected on the high side vs. low side.
 
 * Author(s): Scott Shawcroft
 
@@ -52,19 +56,25 @@ import analogio
 class Thermistor:
     """Thermistor driver"""
 
-    def __init__(self, pin, series_resistor, nominal_resistance, nominal_temperature, b_coefficient):
+    def __init__(self, pin, series_resistor, nominal_resistance, nominal_temperature, b_coefficient, high_side=True):
         self.pin = analogio.AnalogIn(pin)
         self.series_resistor = series_resistor
         self.nominal_resistance = nominal_resistance
         self.nominal_temperature = nominal_temperature
         self.b_coefficient = b_coefficient
+        self.high_side = high_side
 
     @property
     def temperature(self):
         """The temperature of the thermistor in celsius"""
-        reading = self.pin.value / 64
-        reading = (1023 * self.series_resistor) / reading
-        reading -= self.series_resistor
+        if self.high_side:
+            # Thermistor connected from analog input to high logic level.
+            reading = self.pin.value / 64
+            reading = (1023 * self.series_resistor) / reading
+            reading -= self.series_resistor
+        else:
+            # Thermistor connected from analog input to ground.
+            reading = self.series_resistor / (65535.0/self.pin.value - 1.0)
 
         steinhart = reading / self.nominal_resistance  # (R/Ro)
         steinhart = math.log(steinhart)               # ln(R/Ro)
