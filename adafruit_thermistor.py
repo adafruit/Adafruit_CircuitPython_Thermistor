@@ -39,11 +39,12 @@ Implementation Notes
 
 **Hardware:**
 
-* Adafruit `10K Precision Epoxy Thermistor - 3950 NTC <https://www.adafruit.com/products/372>`_  (Product ID: 372)
+* Adafruit `10K Precision Epoxy Thermistor - 3950 NTC <https://www.adafruit.com/products/372>`_
+  (Product ID: 372)
 
 **Software and Dependencies:**
 
-* Adafruit CircuitPython firmware for the ESP8622 and M0-based boards: https://github.com/adafruit/circuitpython/releases
+* Adafruit CircuitPython firmware: https://github.com/adafruit/circuitpython/releases
 
 **Notes:**
 
@@ -56,7 +57,9 @@ import analogio
 class Thermistor:
     """Thermistor driver"""
 
-    def __init__(self, pin, series_resistor, nominal_resistance, nominal_temperature, b_coefficient, high_side=True):
+    def __init__(self, pin, series_resistor, nominal_resistance, nominal_temperature,
+                 b_coefficient, *, high_side=True):
+        # pylint: disable=too-many-arguments
         self.pin = analogio.AnalogIn(pin)
         self.series_resistor = series_resistor
         self.nominal_resistance = nominal_resistance

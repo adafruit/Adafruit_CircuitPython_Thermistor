@@ -6,9 +6,9 @@ Introduction
     :target: https://circuitpython.readthedocs.io/projects/thermistor/en/latest/
     :alt: Documentation Status
 
-.. image :: https://badges.gitter.im/adafruit/circuitpython.svg
-    :target: https://gitter.im/adafruit/circuitpython?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
-    :alt: Gitter
+.. image :: https://img.shields.io/discord/327254708534116352.svg
+    :target: https://discord.gg/nBQh6qu
+    :alt: Discord
 
 Thermistors are resistors that predictably change resistance with temperature.
 This driver uses an analog reading and math to determine the temperature. They
@@ -34,10 +34,10 @@ a 10k series resistor, 10k nominal resistance, 25 celsius nominal temperature an
 
 .. code-block : python
 
-  import adafruit_thermistor
-  import board
-  thermistor = adafruit_thermistor.Thermistor(board.TEMPERATURE, 10000, 10000, 25, 3950)
-  print(thermistor.temperature)
+    import adafruit_thermistor
+    import board
+    thermistor = adafruit_thermistor.Thermistor(board.TEMPERATURE, 10000, 10000, 25, 3950)
+    print(thermistor.temperature)
 
 Contributing
 ============
