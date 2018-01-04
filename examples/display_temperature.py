@@ -1,18 +1,17 @@
+import time
 import adafruit_thermistor
 import board
-import time
 
 # these values work with the Adafruit CircuitPlayground Express.
 # they may work with other thermistors as well, as they're fairly standard,
 # though the pin will likely need to change (ie board.A1)
 pin = board.TEMPERATURE
-series_resistor = 10000
-nominal_resistance = 10000
-nominal_temperature = 25
+resistor = 10000
+resistance = 10000
+nominal_temp = 25
 b_coefficient = 3950
-high_side_bool = True
 
-thermistor = adafruit_thermistor.Thermistor(pin, series_resistor, nominal_resistance, nominal_temperature, b_coefficient, high_side=high_side_bool)
+thermistor = adafruit_thermistor.Thermistor(pin, resistor, resistance, nominal_temp, b_coefficient)
 
 # print the temperature in C and F to the serial console every second
 while True:
