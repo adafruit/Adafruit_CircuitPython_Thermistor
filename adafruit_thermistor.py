@@ -42,6 +42,9 @@ Implementation Notes
 * Adafruit `10K Precision Epoxy Thermistor - 3950 NTC <https://www.adafruit.com/products/372>`_
   (Product ID: 372)
 
+* Adafruit `Circuit Playground Express <https://www.adafruit.com/products/3333>`_
+  (Product ID: 3333)
+
 **Software and Dependencies:**
 
 * Adafruit CircuitPython firmware: https://github.com/adafruit/circuitpython/releases
