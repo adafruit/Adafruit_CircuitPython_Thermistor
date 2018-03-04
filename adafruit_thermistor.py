@@ -21,7 +21,7 @@
 # THE SOFTWARE.
 """
 `adafruit_thermistor` - Read temperature with a thermistor
-====================================================
+===========================================================
 
 A thermistor is a resistor that varies with temperature. This driver takes the
 parameters of that resistor and its series resistor to determine the current
