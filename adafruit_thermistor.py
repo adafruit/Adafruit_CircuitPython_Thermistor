@@ -21,7 +21,7 @@
 # THE SOFTWARE.
 """
 `adafruit_thermistor` - Read temperature with a thermistor
-====================================================
+===========================================================
 
 A thermistor is a resistor that varies with temperature. This driver takes the
 parameters of that resistor and its series resistor to determine the current
@@ -41,6 +41,9 @@ Implementation Notes
 
 * Adafruit `10K Precision Epoxy Thermistor - 3950 NTC <https://www.adafruit.com/products/372>`_
   (Product ID: 372)
+
+* Adafruit `Circuit Playground Express <https://www.adafruit.com/products/3333>`_
+  (Product ID: 3333)
 
 **Software and Dependencies:**
 
