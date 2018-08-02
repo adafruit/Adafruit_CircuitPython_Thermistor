@@ -1,6 +1,6 @@
 import time
-import adafruit_thermistor
 import board
+import adafruit_thermistor
 
 # these values work with the Adafruit CircuitPlayground Express.
 # they may work with other thermistors as well, as they're fairly standard,
