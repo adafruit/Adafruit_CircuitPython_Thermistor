@@ -1,10 +1,11 @@
 import time
-import adafruit_thermistor
 import board
+import adafruit_thermistor
 
 # these values work with the Adafruit CircuitPlayground Express.
 # they may work with other thermistors as well, as they're fairly standard,
 # though the pin will likely need to change (ie board.A1)
+# pylint: disable=no-member
 pin = board.TEMPERATURE
 resistor = 10000
 resistance = 10000
