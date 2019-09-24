@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 """
-`adafruit_thermistor` - Read temperature with a thermistor
+`adafruit_thermistor`
 ===========================================================
 
 A thermistor is a resistor that varies with temperature. This driver takes the
@@ -56,6 +56,10 @@ Implementation Notes
 
 import math
 import analogio
+
+__version__ = "0.0.0-auto.0"
+__repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_Thermistor.git"
+
 
 class Thermistor:
     """Thermistor driver"""
