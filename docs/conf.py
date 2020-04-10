@@ -35,7 +35,7 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "Adafruit THERMISTOR Library"
+project = "Adafruit Thermistor Library"
 copyright = "2017 Scott Shawcroft"
 author = "Scott Shawcroft"
 
@@ -110,7 +110,7 @@ html_static_path = ["_static"]
 html_favicon = "_static/favicon.ico"
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "AdafruitTHERMISTORLibrarydoc"
+htmlhelp_basename = "AdafruitThermistorLibrarydoc"
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -135,8 +135,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "AdafruitTHERMISTORLibrary.tex",
-        "Adafruit THERMISTOR Library Documentation",
+        "AdafruitThermistorLibrary.tex",
+        "Adafruit Thermistor Library Documentation",
         "Phiilip Moyer",
         "manual",
     ),
@@ -149,8 +149,8 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "AdafruitTHERMISTORlibrary",
-        "Adafruit THERMISTOR Library Documentation",
+        "AdafruitThermistorlibrary",
+        "Adafruit Thermistor Library Documentation",
         [author],
         1,
     )
@@ -164,10 +164,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "AdafruitTHERMISTORLibrary",
-        "Adafruit THERMISTOR Library Documentation",
+        "AdafruitThermistorLibrary",
+        "Adafruit Thermistor Library Documentation",
         author,
-        "AdafruitTHERMISTORLibrary",
+        "AdafruitThermistorLibrary",
         "One line description of project.",
         "Miscellaneous",
     ),
