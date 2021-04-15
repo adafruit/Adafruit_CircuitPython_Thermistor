@@ -45,7 +45,43 @@ __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_Thermistor.git"
 
 
 class Thermistor:
-    """Thermistor driver"""
+    """
+    :param ~microcontroller.Pin pin: Analog pin used for the thermistor
+    :param int series_resistor: resistance in series between you analog input and the
+     thermistor, normally a 10K resistor is placed between VCC and the analog pin
+    :param int nominal_resistance: nominal resistance of the thermistor. normally 10k
+    :param int b_coefficient: thermistor's B coefficient. Typically this is a value in
+     the range of 3000-4000
+    :param bool high_side: indicates if the thermistor is connected on the high side or
+     low side of the resistor. Defaults to `True`
+
+
+    **Quickstart: Importing and using the adafruit_thermistor library**
+
+        Here is one way of importing the `Thermistor` class so you can use it
+        with the name ``thermistor``.
+        First you will need to import the libraries to use the sensor
+
+        .. code-block:: python
+
+            import board
+            import adafruit_thermistor
+
+        Once this is done you can define your `Thermistor` object and define your sensor object
+
+        .. code-block:: python
+
+            thermistor = adafruit_thermistor.Thermistor(board.A0, 10000, 10000, 25, 3950)
+
+        Now you have access to the temperature with the :attr:`temperature` attribute.
+        This temperature is in Celsius.
+
+
+        .. code-block:: python
+
+            temperature = thermistor.temperature
+
+    """
 
     def __init__(
         self,
@@ -67,7 +103,7 @@ class Thermistor:
 
     @property
     def temperature(self):
-        """The temperature of the thermistor in celsius"""
+        """The temperature of the thermistor in Celsius"""
         if self.high_side:
             # Thermistor connected from analog input to high logic level.
             reading = self.pin.value / 64
