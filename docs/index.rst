@@ -23,6 +23,8 @@ Table of Contents
 .. toctree::
     :caption: Tutorials
 
+    Thermistor Learning Guide <https://learn.adafruit.com/thermistor>
+
 .. toctree::
     :caption: Related Products
 
