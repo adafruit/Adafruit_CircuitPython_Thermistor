@@ -67,6 +67,11 @@ a 10k series resistor, 10k nominal resistance, 25 celsius nominal temperature an
     thermistor = adafruit_thermistor.Thermistor(board.TEMPERATURE, 10000, 10000, 25, 3950)
     print(thermistor.temperature)
 
+Documentation
+=============
+
+API documentation for this library can be found on `Read the Docs <https://circuitpython.readthedocs.io/projects/thermistor/en/latest/>`_.
+
 Contributing
 ============
 
