@@ -3,7 +3,7 @@ Introduction
 ============
 
 .. image:: https://readthedocs.org/projects/adafruit-circuitpython-thermistor/badge/?version=latest
-    :target: https://circuitpython.readthedocs.io/projects/thermistor/en/latest/
+    :target: https://docs.circuitpython.org/projects/thermistor/en/latest/
     :alt: Documentation Status
 
 .. image :: https://img.shields.io/discord/327254708534116352.svg
@@ -70,7 +70,7 @@ a 10k series resistor, 10k nominal resistance, 25 celsius nominal temperature an
 Documentation
 =============
 
-API documentation for this library can be found on `Read the Docs <https://circuitpython.readthedocs.io/projects/thermistor/en/latest/>`_.
+API documentation for this library can be found on `Read the Docs <https://docs.circuitpython.org/projects/thermistor/en/latest/>`_.
 
 Contributing
 ============
