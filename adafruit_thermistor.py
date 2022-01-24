@@ -102,8 +102,8 @@ class Thermistor:
         self.high_side = high_side
 
     @property
-    def temperature(self):
-        """The temperature of the thermistor in Celsius"""
+    def resistance(self):
+        """The resistance of the thermistor in Ohms"""
         if self.high_side:
             # Thermistor connected from analog input to high logic level.
             reading = self.pin.value / 64
@@ -112,8 +112,12 @@ class Thermistor:
         else:
             # Thermistor connected from analog input to ground.
             reading = self.series_resistor / (65535.0 / self.pin.value - 1.0)
+        return reading
 
-        steinhart = reading / self.nominal_resistance  # (R/Ro)
+    @property
+    def temperature(self):
+        """The temperature of the thermistor in Celsius"""
+        steinhart = self.resistance / self.nominal_resistance  # (R/Ro)
         steinhart = math.log(steinhart)  # ln(R/Ro)
         steinhart /= self.b_coefficient  # 1/B * ln(R/Ro)
         steinhart += 1.0 / (self.nominal_temperature + 273.15)  # + (1/To)
