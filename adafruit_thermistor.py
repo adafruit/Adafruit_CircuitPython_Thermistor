@@ -39,7 +39,11 @@ Implementation Notes
 
 import math
 import analogio
-import microcontroller
+try:
+    import typing  # pylint: disable=unused-import
+    import microcontroller
+except ImportError:
+    pass
 
 __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_Thermistor.git"
@@ -86,14 +90,14 @@ class Thermistor:
 
     def __init__(
         self,
-        pin: microcontroller.pin,
+        pin: microcontroller.Pin,
         series_resistor: int,
         nominal_resistance: int,
         nominal_temperature: int,
         b_coefficient: int,
         *,
         high_side: bool = True
-    ):
+    ) -> None:
         # pylint: disable=too-many-arguments
         self.pin = analogio.AnalogIn(pin)
         self.series_resistor = series_resistor
@@ -103,7 +107,7 @@ class Thermistor:
         self.high_side = high_side
 
     @property
-    def resistance(self):
+    def resistance(self) -> float:
         """The resistance of the thermistor in Ohms"""
         if self.high_side:
             # Thermistor connected from analog input to high logic level.
@@ -116,7 +120,7 @@ class Thermistor:
         return reading
 
     @property
-    def temperature(self):
+    def temperature(self) -> float:
         """The temperature of the thermistor in Celsius"""
         steinhart = self.resistance / self.nominal_resistance  # (R/Ro)
         steinhart = math.log(steinhart)  # ln(R/Ro)
