@@ -39,6 +39,7 @@ Implementation Notes
 
 import math
 import analogio
+
 try:
     import typing  # pylint: disable=unused-import
     import microcontroller
