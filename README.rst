@@ -14,6 +14,10 @@ Introduction
     :target: https://github.com/adafruit/Adafruit_CircuitPython_Thermistor/actions/
     :alt: Build Status
 
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/psf/black
+    :alt: Code Style: Black
+
 Thermistors are resistors that predictably change resistance with temperature.
 This driver uses an analog reading and math to determine the temperature. They
 are commonly used as a low cost way to measure temperature.
