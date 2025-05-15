@@ -38,10 +38,12 @@ Implementation Notes
 """
 
 import math
+
 import analogio
 
 try:
-    import typing  # pylint: disable=unused-import
+    import typing
+
     import microcontroller
 except ImportError:
     pass
@@ -97,9 +99,8 @@ class Thermistor:
         nominal_temperature: int,
         b_coefficient: int,
         *,
-        high_side: bool = True
+        high_side: bool = True,
     ) -> None:
-        # pylint: disable=too-many-arguments
         self.pin = analogio.AnalogIn(pin)
         self.series_resistor = series_resistor
         self.nominal_resistance = nominal_resistance
